@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<!-- saved from url=(0143)https://c1wdg5a1d72sk5wh.canvacode.com/codelet/AAEAEGMxd2RnNWExZDcyc2s1d2gAAAAAAZxxaHfb_0CB6scTknuDPoJwB7taG__3LmFUjA8Nstj-%2D1oQf6E/index.html -->
+<html lang="id" class="h-full"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Huruf Kapital - Bahasa Indonesia</title>
+  <script src="./3.4.17"></script>
+  <script src="./element_sdk.js.download"></script>
+  <link href="./css2" rel="stylesheet">
+  <style>
+    * { font-family: 'Nunito', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #E9D5FF 0%, #FCE7F3 50%, #F3E8FF 100%); }
+    .card-shadow { box-shadow: 0 8px 30px rgba(168, 85, 247, 0.15); }
+    .btn-primary { 
+      background: linear-gradient(135deg, #A855F7 0%, #EC4899 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
+    .btn-secondary {
+      background: linear-gradient(135deg, #F0ABFC 0%, #F9A8D4 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover { transform: translateY(-2px); }
+    .nav-btn {
+      background: white;
+      border: 2px solid #E9D5FF;
+      transition: all 0.3s ease;
+    }
+    .nav-btn:hover, .nav-btn.active { 
+      background: linear-gradient(135deg, #A855F7 0%, #EC4899 100%);
+      color: white;
+      border-color: transparent;
+    }
+    .flashcard {
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flashcard-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+    .flashcard-front, .flashcard-back {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .flashcard-back { transform: rotateY(180deg); }
+    .match-item {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .match-item:hover { transform: scale(1.02); }
+    .match-item.selected { 
+      border-color: #A855F7 !important;
+      background: linear-gradient(135deg, #F3E8FF 0%, #FCE7F3 100%) !important;
+    }
+    .match-item.correct { 
+      border-color: #22C55E !important;
+      background: #DCFCE7 !important;
+    }
+    .match-item.incorrect { 
+      border-color: #EF4444 !important;
+      background: #FEE2E2 !important;
+    }
+    .word-btn {
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      padding: 6px 8px;
+      margin: 3px;
+      display: inline-block;
+      font-weight: 500;
+      background: transparent;
+    }
+    .word-btn:hover { background: #F3E8FF; }
+    .word-btn-selected {
+      background: linear-gradient(135deg, #A855F7 0%, #EC4899 100%);
+      color: white;
+      border-color: #A855F7;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+    }
+    .word-btn.correct-answer { 
+      background: #DCFCE7; 
+      border-color: #22C55E; 
+      color: #166534; 
+      font-weight: bold;
+    }
+    .word-btn.wrong-answer { 
+      background: #FEE2E2; 
+      border-color: #EF4444; 
+      color: #991B1B; 
+      font-weight: bold;
+    }
+    .word-btn.missed-answer { 
+      background: #FEF08A; 
+      border-color: #FBBF24; 
+      color: #92400E; 
+      font-weight: bold;
+    }
+    .word-btn.already-correct {
+      background: #E0E7FF;
+      border-color: #818CF8;
+      color: #3730A3;
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.05); }
+      70% { transform: scale(0.9); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-bounce-in { animation: bounceIn 0.6s ease-out; }
+    .animate-slide-in { animation: slideIn 0.4s ease-out; }
+    .star { color: #FBBF24; }
+    .progress-bar {
+      background: linear-gradient(90deg, #A855F7 0%, #EC4899 100%);
+      transition: width 0.5s ease;
+    }
+    .emoji-bounce {
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .content-area {
+      height: calc(100% - 80px);
+      overflow-y: auto;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-full{height:100%}.h-3{height:0.75rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-8{height:2rem}.w-16{width:4rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-l-4{border-left-width:4px}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-pink-200{--tw-border-opacity:1;border-color:rgb(251 207 232 / var(--tw-border-opacity, 1))}.border-purple-200{--tw-border-opacity:1;border-color:rgb(233 213 255 / var(--tw-border-opacity, 1))}.border-purple-500{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.border-red-500{--tw-border-opacity:1;border-color:rgb(239 68 68 / var(--tw-border-opacity, 1))}.border-yellow-200{--tw-border-opacity:1;border-color:rgb(254 240 138 / var(--tw-border-opacity, 1))}.border-yellow-500{--tw-border-opacity:1;border-color:rgb(234 179 8 / var(--tw-border-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-pink-100{--tw-bg-opacity:1;background-color:rgb(252 231 243 / var(--tw-bg-opacity, 1))}.bg-pink-50{--tw-bg-opacity:1;background-color:rgb(253 242 248 / var(--tw-bg-opacity, 1))}.bg-pink-500{--tw-bg-opacity:1;background-color:rgb(236 72 153 / var(--tw-bg-opacity, 1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.bg-purple-500{--tw-bg-opacity:1;background-color:rgb(168 85 247 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-yellow-100{--tw-bg-opacity:1;background-color:rgb(254 249 195 / var(--tw-bg-opacity, 1))}.bg-yellow-50{--tw-bg-opacity:1;background-color:rgb(254 252 232 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-pink-50{--tw-gradient-from:#fdf2f8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(253 242 248 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-purple-50{--tw-gradient-from:#faf5ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(250 245 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-purple-500{--tw-gradient-from:#a855f7 var(--tw-gradient-from-position);--tw-gradient-to:rgb(168 85 247 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-pink-50{--tw-gradient-to:#fdf2f8 var(--tw-gradient-to-position)}.to-pink-500{--tw-gradient-to:#ec4899 var(--tw-gradient-to-position)}.to-purple-50{--tw-gradient-to:#faf5ff var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pl-12{padding-left:3rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-justify{text-align:justify}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-green-800{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.text-pink-600{--tw-text-opacity:1;color:rgb(219 39 119 / var(--tw-text-opacity, 1))}.text-pink-700{--tw-text-opacity:1;color:rgb(190 24 93 / var(--tw-text-opacity, 1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-purple-700{--tw-text-opacity:1;color:rgb(126 34 206 / var(--tw-text-opacity, 1))}.text-purple-800{--tw-text-opacity:1;color:rgb(107 33 168 / var(--tw-text-opacity, 1))}.text-red-700{--tw-text-opacity:1;color:rgb(185 28 28 / var(--tw-text-opacity, 1))}.text-red-800{--tw-text-opacity:1;color:rgb(153 27 27 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-700{--tw-text-opacity:1;color:rgb(161 98 7 / var(--tw-text-opacity, 1))}.text-yellow-800{--tw-text-opacity:1;color:rgb(133 77 14 / var(--tw-text-opacity, 1))}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:scale-125:hover{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-purple-50:hover{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.focus\:border-pink-500:focus{--tw-border-opacity:1;border-color:rgb(236 72 153 / var(--tw-border-opacity, 1))}.focus\:border-purple-500:focus{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}</style></head>
+<body class="h-full gradient-bg">
+  <div id="app" class="h-full w-full overflow-auto">
+    
+    <!-- Home Page -->
+    <div id="page-home" class="page h-full flex flex-col items-center justify-center p-4 hidden">
+      <div class="max-w-md w-full text-center animate-bounce-in">
+        <img src="./Cover_Bin_huruf_Kapital_z5yt4j.png" alt="Cover Huruf Kapital" class="w-full rounded-3xl card-shadow mb-6" loading="lazy" onerror="this.style.background=&#39;linear-gradient(135deg, #A855F7 0%, #EC4899 100%)&#39;; this.style.height=&#39;300px&#39;; this.alt=&#39;Belajar Huruf Kapital&#39;;">
+        <h1 id="main-title" class="text-2xl md:text-3xl font-extrabold text-purple-700 mb-2">Belajar Huruf Kapital</h1>
+        <p class="text-pink-600 mb-6">Bahasa Indonesia - Kelas Awal</p>
+        <button onclick="showPage(&#39;menu&#39;)" class="btn-primary text-white font-bold py-4 px-8 rounded-full text-lg card-shadow">
+          🚀 Mulai Belajar
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Page -->
+    <div id="page-menu" class="page h-full hidden">
+      <div class="h-full flex flex-col">
+        <header class="bg-white/80 backdrop-blur-sm p-4 card-shadow">
+          <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <button onclick="showPage(&#39;home&#39;)" class="text-purple-600 font-bold flex items-center gap-2">
+              <span>←</span> Beranda
+            </button>
+            <h2 class="text-lg font-bold text-purple-700">📚 Menu Utama</h2>
+            <div class="w-16"></div>
+          </div>
+        </header>
+        <div class="content-area p-4">
+          <div class="max-w-md mx-auto space-y-3">
+            <button onclick="showPage(&#39;pengantar&#39;)" class="w-full nav-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+              <span class="text-3xl">📝</span>
+              <div>
+                <h3 class="font-bold text-purple-700">Kata Pengantar</h3>
+                <p class="text-sm text-gray-500">Sambutan dan tujuan pembelajaran</p>
+              </div>
+            </button>
+            <button onclick="showPage(&#39;daftar-isi&#39;)" class="w-full nav-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+              <span class="text-3xl">📋</span>
+              <div>
+                <h3 class="font-bold text-purple-700">Daftar Isi</h3>
+                <p class="text-sm text-gray-500">Navigasi konten modul</p>
+              </div>
+            </button>
+            <button onclick="showPage(&#39;materi&#39;)" class="w-full nav-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+              <span class="text-3xl">📖</span>
+              <div>
+                <h3 class="font-bold text-purple-700">Materi Pembelajaran</h3>
+                <p class="text-sm text-gray-500">Kaidah huruf kapital</p>
+              </div>
+            </button>
+            <button onclick="showPage(&#39;kuis-menu&#39;)" class="w-full nav-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+              <span class="text-3xl">🎯</span>
+              <div>
+                <h3 class="font-bold text-purple-700">Uji Pemahaman</h3>
+                <p class="text-sm text-gray-500">Kuis interaktif</p>
+              </div>
+            </button>
+            <button onclick="showPage(&#39;refleksi&#39;)" class="w-full nav-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+              <span class="text-3xl">💭</span>
+              <div>
+                <h3 class="font-bold text-purple-700">Refleksi</h3>
+                <p class="text-sm text-gray-500">Evaluasi diri</p>
+              </div>
+            </button>
+            <button onclick="showPage(&#39;penutup&#39;)" class="w-full nav-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+              <span class="text-3xl">🎉</span>
+              <div>
+                <h3 class="font-bold text-purple-700">Penutup</h3>
+                <p class="text-sm text-gray-500">Rangkuman dan motivasi</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kata Pengantar -->
+    <div id="page-pengantar" class="page h-full hidden">
+      <div class="h-full flex flex-col">
+        <header class="bg-white/80 backdrop-blur-sm p-4 card-shadow">
+          <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <button onclick="showPage(&#39;menu&#39;)" class="text-purple-600 font-bold">← Menu</button>
+            <h2 class="text-lg font-bold text-purple-700">📝 Kata Pengantar</h2>
+            <div class="w-16"></div>
+          </div>
+        </header>
+        <div class="content-area p-4">
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-3xl p-6 card-shadow animate-slide-in">
+              <div class="text-center mb-6">
+                <span class="text-6xl">👋</span>
+                <h3 class="text-2xl font-bold text-purple-700 mt-4">Selamat Datang!</h3>
+              </div>
+              <div class="space-y-4 text-gray-700 leading-relaxed">
+                <p>Halo, Sobat Pintar! 🌟</p>
+                <p>Selamat datang di modul pembelajaran <strong class="text-purple-600">Huruf Kapital</strong>! Modul ini akan membantumu memahami kapan dan bagaimana menggunakan huruf kapital dengan benar dalam bahasa Indonesia.</p>
+                <div class="bg-purple-50 rounded-2xl p-4 border-l-4 border-purple-500">
+                  <h4 class="font-bold text-purple-700 mb-2">🎯 Tujuan Pembelajaran:</h4>
+                  <p>Setelah mempelajari modul ini, kamu akan mampu <strong>menemukan dan memperbaiki kata yang terdapat kesalahan dalam penulisan huruf kapital</strong>.</p>
+                </div>
+                <p>Mari kita belajar bersama dengan cara yang menyenangkan! Kamu bisa membaca materi, bermain flashcard, dan mengerjakan kuis seru. 🎮</p>
+                <p class="text-right text-pink-600 font-semibold">Selamat belajar! 💖</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daftar Isi -->
+    <div id="page-daftar-isi" class="page h-full hidden">
+      <div class="h-full flex flex-col">
+        <header class="bg-white/80 backdrop-blur-sm p-4 card-shadow">
+          <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <button onclick="showPage(&#39;menu&#39;)" class="text-purple-600 font-bold">← Menu</button>
+            <h2 class="text-lg font-bold text-purple-700">📋 Daftar Isi</h2>
+            <div class="w-16"></div>
+          </div>
+        </header>
+        <div class="content-area p-4">
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-3xl p-6 card-shadow animate-slide-in">
+              <div class="space-y-3">
+                <div onclick="showPage(&#39;pengantar&#39;)" class="flex items-center gap-4 p-3 rounded-xl hover:bg-purple-50 cursor-pointer transition">
+                  <span class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center text-purple-700 font-bold">1</span>
+                  <span class="text-gray-700">Kata Pengantar</span>
+                </div>
+                <div onclick="showPage(&#39;materi&#39;)" class="flex items-center gap-4 p-3 rounded-xl hover:bg-purple-50 cursor-pointer transition">
+                  <span class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center text-purple-700 font-bold">2</span>
+                  <span class="text-gray-700">Materi Pembelajaran</span>
+                </div>
+                <div class="pl-12 space-y-2 text-sm text-gray-500">
+                  <p>• Video Penjelasan</p>
+                  <p>• Kaidah Huruf Kapital</p>
+                  <p>• Mode Deskripsi</p>
+                  <p>• Mode Flashcard</p>
+                </div>
+                <div onclick="showPage(&#39;kuis-menu&#39;)" class="flex items-center gap-4 p-3 rounded-xl hover:bg-purple-50 cursor-pointer transition">
+                  <span class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center text-pink-700 font-bold">3</span>
+                  <span class="text-gray-700">Uji Pemahaman</span>
+                </div>
+                <div class="pl-12 space-y-2 text-sm text-gray-500">
+                  <p>• Kuis Menjodohkan</p>
+                  <p>• Analisis Paragraf</p>
+                </div>
+                <div onclick="showPage(&#39;refleksi&#39;)" class="flex items-center gap-4 p-3 rounded-xl hover:bg-purple-50 cursor-pointer transition">
+                  <span class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center text-purple-700 font-bold">4</span>
+                  <span class="text-gray-700">Refleksi</span>
+                </div>
+                <div onclick="showPage(&#39;penutup&#39;)" class="flex items-center gap-4 p-3 rounded-xl hover:bg-purple-50 cursor-pointer transition">
+                  <span class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center text-pink-700 font-bold">5</span>
+                  <span class="text-gray-700">Penutup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Materi Page -->
+    <div id="page-materi" class="page h-full">
+      <div class="h-full flex flex-col">
+        <header class="bg-white/80 backdrop-blur-sm p-4 card-shadow">
+          <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <button onclick="showPage(&#39;menu&#39;)" class="text-purple-600 font-bold">← Menu</button>
+            <h2 class="text-lg font-bold text-purple-700">📖 Materi</h2>
+            <div class="w-16"></div>
+          </div>
+        </header>
+        <div class="content-area p-4">
+          <div class="max-w-2xl mx-auto">
+            <!-- Mode Toggle -->
+            <div class="flex gap-2 mb-4 bg-white rounded-full p-1 card-shadow">
+              <button id="btn-deskripsi" onclick="setMateriMode(&#39;deskripsi&#39;)" class="flex-1 py-2 px-4 rounded-full font-bold transition btn-primary text-white">
+                📄 Deskripsi
+              </button>
+              <button id="btn-flashcard" onclick="setMateriMode(&#39;flashcard&#39;)" class="flex-1 py-2 px-4 rounded-full font-bold transition text-purple-600">
+                🎴 Flashcard
+              </button>
+            </div>
+
+            <!-- Deskripsi Mode -->
+            <div id="materi-deskripsi" class="space-y-4">
+              <!-- Video Section -->
+              <div class="bg-white rounded-3xl p-5 card-shadow animate-slide-in">
+                <h3 class="text-xl font-bold text-purple-700 mb-4 flex items-center gap-2">
+                  <span class="text-2xl">🎬</span> Video Penjelasan
+                </h3>
+                <div class="video-container rounded-2xl overflow-hidden">
+                  <iframe src="./dQw4w9WgXcQ.html" title="Video Penjelasan Huruf Kapital" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy">
+                  </iframe>
+                </div>
+                <p class="text-sm text-gray-600 mt-3 text-center">💡 Ganti URL video di atas dengan link YouTube video kamu sendiri!</p>
+              </div>
+
+              <!-- Kaidah Section -->
+              <div class="bg-white rounded-3xl p-5 card-shadow animate-slide-in">
+                <h3 class="text-xl font-bold text-purple-700 mb-4 flex items-center gap-2">
+                  <span class="text-2xl">✨</span> Kaidah Penggunaan Huruf Kapital
+                </h3>
+                
+                <div class="space-y-4">
+                  <!-- Rule 1 -->
+                  <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4">
+                    <h4 class="font-bold text-purple-700 flex items-center gap-2">
+                      <span class="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm">1</span>
+                      Awal Kalimat
+                    </h4>
+                    <p class="text-gray-600 mt-2 text-sm">Huruf pertama pada awal kalimat, termasuk setelah titik (.), tanda seru (!), dan tanda tanya (?).</p>
+                    <div class="mt-2 bg-white rounded-xl p-3 text-sm">
+                      <span class="text-pink-600">Contoh:</span> <strong class="text-purple-700">I</strong>bu berkata, "<strong>B</strong>elajar yang rajin ya!" <strong>K</strong>ami siap. <strong>A</strong>pa kabar?
+                    </div>
+                  </div>
+
+                  <!-- Rule 2 -->
+                  <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-4">
+                    <h4 class="font-bold text-purple-700 flex items-center gap-2">
+                      <span class="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm">2</span>
+                      Nama Orang &amp; Julukan
+                    </h4>
+                    <p class="text-gray-600 mt-2 text-sm">Unsur nama orang dan julukan kehormatan.</p>
+                    <div class="mt-2 bg-white rounded-xl p-3 text-sm">
+                      <span class="text-pink-600">Contoh:</span> <strong class="text-purple-700">W</strong>age <strong class="text-purple-700">R</strong>udolf <strong class="text-purple-700">S</strong>upratman, <strong class="text-purple-700">J</strong>enderal <strong class="text-purple-700">S</strong>oedirman
+                    </div>
+                  </div>
+
+                  <!-- Rule 3 -->
+                  <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4">
+                    <h4 class="font-bold text-purple-700 flex items-center gap-2">
+                      <span class="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm">3</span>
+                      Agama, Kitab Suci, Tuhan
+                    </h4>
+                    <p class="text-gray-600 mt-2 text-sm">Nama agama, kitab suci, dan kata ganti Tuhan.</p>
+                    <div class="mt-2 bg-white rounded-xl p-3 text-sm">
+                      <span class="text-pink-600">Contoh:</span> <strong class="text-purple-700">I</strong>slam, <strong class="text-purple-700">K</strong>risten, <strong class="text-purple-700">A</strong>l-<strong class="text-purple-700">Q</strong>ur'an, <strong class="text-purple-700">T</strong>uhan <strong class="text-purple-700">Y</strong>ang <strong class="text-purple-700">M</strong>aha <strong class="text-purple-700">E</strong>sa
+                    </div>
+                  </div>
+
+                  <!-- Rule 4 -->
+                  <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-4">
+                    <h4 class="font-bold text-purple-700 flex items-center gap-2">
+                      <span class="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm">4</span>
+                      Gelar Kehormatan/Akademik
+                    </h4>
+                    <p class="text-gray-600 mt-2 text-sm">Gelar yang diikuti nama orang.</p>
+                    <div class="mt-2 bg-white rounded-xl p-3 text-sm">
+                      <span class="text-pink-600">Contoh:</span> <strong class="text-purple-700">S</strong>ultan <strong class="text-purple-700">H</strong>asanuddin, <strong class="text-purple-700">D</strong>oktor <strong class="text-purple-700">A</strong>ji
+                    </div>
+                  </div>
+
+                  <!-- Rule 5 -->
+                  <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4">
+                    <h4 class="font-bold text-purple-700 flex items-center gap-2">
+                      <span class="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm">5</span>
+                      Nama Bangsa, Bahasa, Suku
+                    </h4>
+                    <p class="text-gray-600 mt-2 text-sm">Huruf pertama nama bangsa, suku, dan bahasa (saat mereferensi sebagai nama bangsa/suku).</p>
+                    <div class="mt-2 bg-white rounded-xl p-3 text-sm">
+                      <span class="text-pink-600">Contoh:</span> bangsa <strong class="text-purple-700">I</strong>ndonesia, bahasa <strong class="text-purple-700">I</strong>ngris, suku <strong class="text-purple-700">D</strong>ayak
+                    </div>
+                  </div>
+
+                  <!-- Rule 6 -->
+                  <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-4">
+                    <h4 class="font-bold text-purple-700 flex items-center gap-2">
+                      <span class="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm">6</span>
+                      Waktu dan Hari Besar
+                    </h4>
+                    <p class="text-gray-600 mt-2 text-sm">Nama tahun, bulan, hari, dan hari raya.</p>
+                    <div class="mt-2 bg-white rounded-xl p-3 text-sm">
+                      <span class="text-pink-600">Contoh:</span> bulan <strong class="text-purple-700">A</strong>gustus, hari <strong class="text-purple-700">J</strong>umat, hari <strong class="text-purple-700">L</strong>ebaran
+                    </div>
+                  </div>
+
+                  <!-- Rule 7 -->
+                  <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4">
+                    <h4 class="font-bold text-purple-700 flex items-center gap-2">
+                      <span class="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm">7</span>
+                      Geografi dan Tempat
+                    </h4>
+                    <p class="text-gray-600 mt-2 text-sm">Nama negara, kota, sungai, gunung.</p>
+                    <div class="mt-2 bg-white rounded-xl p-3 text-sm">
+                      <span class="text-pink-600">Contoh:</span> <strong class="text-purple-700">J</strong>akarta, <strong class="text-purple-700">P</strong>ulau <strong class="text-purple-700">B</strong>ali, <strong class="text-purple-700">S</strong>ungai <strong class="text-purple-700">M</strong>usi
+                    </div>
+                  </div>
+
+                  <!-- Rule 8 -->
+                  <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-4">
+                    <h4 class="font-bold text-purple-700 flex items-center gap-2">
+                      <span class="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm">8</span>
+                      Judul Buku/Karangan
+                    </h4>
+                    <p class="text-gray-600 mt-2 text-sm">Huruf pertama setiap kata dalam judul, <strong>kecuali kata tugas</strong> (di, ke, dari, dan, yang, untuk, dengan, pada, oleh) yang tidak terletak di awal judul.</p>
+                    <div class="mt-2 bg-white rounded-xl p-3 text-sm">
+                      <span class="text-pink-600">Contoh:</span> <strong class="text-purple-700">L</strong>askar <strong class="text-purple-700">P</strong>elangi, <strong class="text-purple-700">B</strong>umi <strong class="text-purple-700">M</strong>anusia
+                    </div>
+                    <div class="mt-3 bg-yellow-50 border border-yellow-200 rounded-xl p-3 text-sm">
+                      <p class="text-yellow-800"><strong>💡 Perhatikan!</strong></p>
+                      <p class="text-yellow-700 mt-1">Kata tugas seperti <em>"di", "ke", "dan", "yang"</em> ditulis huruf kecil jika berada di tengah judul.</p>
+                      <p class="text-yellow-700 mt-1">Contoh: <strong class="text-purple-700">S</strong>i <strong class="text-purple-700">K</strong>ancil dan <strong class="text-purple-700">B</strong>uaya</p>
+                    </div>
+                  </div>
+
+                  <!-- IMPORTANT NOTE -->
+                  <div class="bg-red-50 border-l-4 border-red-500 rounded-2xl p-4">
+                    <h4 class="font-bold text-red-700 flex items-center gap-2">
+                      <span class="text-lg">⚠️</span> Penting: Aturan Awal Kalimat
+                    </h4>
+                    <p class="text-gray-600 mt-2 text-sm"><strong>Kata pertama setelah tanda titik (.), tanda seru (!), dan tanda tanya (?) HARUS ditulis kapital</strong>, tidak peduli jenis katanya (kata ganti, kata biasa, gelar, dll).</p>
+                    <div class="mt-3 bg-white rounded-xl p-3 text-sm space-y-2">
+                      <div>
+                        <span class="text-pink-600 font-semibold">❌ Salah:</span> "Ayo pergi! semoga kita tiba tepat waktu."
+                      </div>
+                      <div>
+                        <span class="text-green-600 font-semibold">✅ Benar:</span> "Ayo pergi! <strong>S</strong>emoga kita tiba tepat waktu."
+                      </div>
+                      <div>
+                        <span class="text-pink-600 font-semibold">❌ Salah:</span> Dia pulang. mereka menunggu.
+                      </div>
+                      <div>
+                        <span class="text-green-600 font-semibold">✅ Benar:</span> Dia pulang. <strong>M</strong>ereka menunggu.
+                      </div>
+                      <div>
+                        <span class="text-pink-600 font-semibold">❌ Salah:</span> Apa kabar? di mana mereka?
+                      </div>
+                      <div>
+                        <span class="text-green-600 font-semibold">✅ Benar:</span> Apa kabar? <strong>D</strong>i mana mereka?
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flashcard Mode -->
+            <div id="materi-flashcard" class="hidden">
+              <div class="text-center mb-4">
+                <p class="text-gray-600 text-sm">Klik kartu untuk membalik! 👆</p>
+                <p class="text-purple-600 font-bold" id="flashcard-counter">Kartu 1 dari 8</p>
+              </div>
+              
+              <div id="flashcard-container" class="flashcard h-64 mb-4" onclick="flipCard()">
+                <div class="flashcard-inner relative w-full h-full">
+                  <div class="flashcard-front absolute w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl card-shadow flex items-center justify-center p-6">
+                    <div class="text-center text-white">
+                      <span class="text-4xl mb-3 block" id="flashcard-emoji">📝</span>
+                      <h3 class="text-xl font-bold" id="flashcard-front-text">Awal Kalimat</h3>
+                    </div>
+                  </div>
+                  <div class="flashcard-back absolute w-full h-full bg-white rounded-3xl card-shadow flex items-center justify-center p-6">
+                    <div class="text-center">
+                      <p class="text-gray-700 mb-3" id="flashcard-back-text">Huruf pertama pada awal kalimat harus kapital, juga setelah titik, tanda seru, atau tanda tanya.</p>
+                      <div class="bg-purple-50 rounded-xl p-3">
+                        <p class="text-sm text-purple-700" id="flashcard-example"><strong>I</strong>bu berkata, "<strong>B</strong>elajar yang rajin ya!" <strong>K</strong>ami siap.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-center gap-4">
+                <button onclick="prevCard()" class="btn-secondary text-white font-bold py-3 px-6 rounded-full">
+                  ← Sebelumnya
+                </button>
+                <button onclick="nextCard()" class="btn-primary text-white font-bold py-3 px-6 rounded-full">
+                  Selanjutnya →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kuis Menu -->
+    <div id="page-kuis-menu" class="page h-full hidden">
+      <div class="h-full flex flex-col">
+        <header class="bg-white/80 backdrop-blur-sm p-4 card-shadow">
+          <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <button onclick="showPage(&#39;menu&#39;)" class="text-purple-600 font-bold">← Menu</button>
+            <h2 class="text-lg font-bold text-purple-700">🎯 Uji Pemahaman</h2>
+            <div class="w-16"></div>
+          </div>
+        </header>
+        <div class="content-area p-4">
+          <div class="max-w-md mx-auto space-y-4">
+            <div class="text-center mb-6">
+              <span class="text-6xl emoji-bounce inline-block">🎮</span>
+              <h3 class="text-2xl font-bold text-purple-700 mt-4">Pilih Tipe Kuis</h3>
+              <p class="text-gray-600 mt-2">Uji pemahamanmu tentang huruf kapital!</p>
+            </div>
+            
+            <button onclick="startMatchingQuiz()" class="w-full bg-white rounded-3xl p-6 card-shadow text-left hover:scale-102 transition transform">
+              <div class="flex items-center gap-4">
+                <span class="text-5xl">🔗</span>
+                <div>
+                  <h4 class="font-bold text-purple-700 text-lg">Kuis Menjodohkan</h4>
+                  <p class="text-gray-500 text-sm">Pasangkan kaidah dengan contohnya (10 soal)</p>
+                </div>
+              </div>
+            </button>
+            
+            <button onclick="startAnalysisQuiz()" class="w-full bg-white rounded-3xl p-6 card-shadow text-left hover:scale-102 transition transform">
+              <div class="flex items-center gap-4">
+                <span class="text-5xl">📖</span>
+                <div>
+                  <h4 class="font-bold text-purple-700 text-lg">Analisis Paragraf</h4>
+                  <p class="text-gray-500 text-sm">Temukan kata yang seharusnya dikapitalkan</p>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kuis Menjodohkan -->
+    <div id="page-kuis-matching" class="page h-full hidden">
+      <div class="h-full flex flex-col">
+        <header class="bg-white/80 backdrop-blur-sm p-4 card-shadow">
+          <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <button onclick="showPage(&#39;kuis-menu&#39;)" class="text-purple-600 font-bold">← Kembali</button>
+            <h2 class="text-lg font-bold text-purple-700">🔗 Menjodohkan</h2>
+            <div class="w-16"></div>
+          </div>
+        </header>
+        <div class="content-area p-4">
+          <div class="max-w-4xl mx-auto">
+            <!-- Progress -->
+            <div class="bg-white rounded-full h-3 mb-4 overflow-hidden">
+              <div id="matching-progress" class="progress-bar h-full" style="width: 0%"></div>
+            </div>
+            <p class="text-center text-purple-600 font-bold mb-4" id="matching-score">Skor: 0/10</p>
+            
+            <div class="text-center mb-4">
+              <p class="text-gray-600 text-sm">Pilih satu kaidah (kiri), lalu pilih contohnya (kanan)</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <!-- Left Column - Rules -->
+              <div class="space-y-2" id="matching-rules"></div>
+              <!-- Right Column - Examples -->
+              <div class="space-y-2" id="matching-examples"></div>
+            </div>
+
+            <div id="matching-feedback" class="hidden mt-4 p-4 rounded-2xl text-center"></div>
+            
+            <div id="matching-result" class="hidden mt-6 text-center">
+              <div class="bg-white rounded-3xl p-6 card-shadow">
+                <span class="text-6xl" id="result-emoji">🎉</span>
+                <h3 class="text-2xl font-bold text-purple-700 mt-4" id="result-title">Hebat!</h3>
+                <p class="text-gray-600 mt-2" id="result-message"></p>
+                <button onclick="startMatchingQuiz()" class="btn-primary text-white font-bold py-3 px-6 rounded-full mt-4">
+                  Coba Lagi
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kuis Analisis -->
+    <div id="page-kuis-analysis" class="page h-full hidden">
+      <div class="h-full flex flex-col">
+        <header class="bg-white/80 backdrop-blur-sm p-4 card-shadow">
+          <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <button onclick="showPage(&#39;kuis-menu&#39;)" class="text-purple-600 font-bold">← Kembali</button>
+            <h2 class="text-lg font-bold text-purple-700">🔍 Analisis Paragraf</h2>
+            <div class="w-16"></div>
+          </div>
+        </header>
+        <div class="content-area p-4">
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-3xl p-5 card-shadow mb-4">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-2xl">📖</span>
+                <h3 class="font-bold text-purple-700">Bacaan (Tanpa Huruf Kapital)</h3>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">Klik kata yang menurutmu <strong>harus dikapitalkan</strong>:</p>
+              
+              <div id="analysis-paragraph" class="bg-purple-50 rounded-2xl p-4 leading-relaxed text-gray-700 text-justify">
+                <!-- Words will be inserted here -->
+              </div>
+
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-block px-3 py-1 bg-purple-100 border-2 border-purple-500 text-purple-800 text-xs font-semibold rounded">💜 Dipilih</span>
+                <span class="inline-block px-3 py-1 bg-green-100 border-2 border-green-500 text-green-800 text-xs font-semibold rounded">✅ Benar</span>
+                <span class="inline-block px-3 py-1 bg-red-100 border-2 border-red-500 text-red-800 text-xs font-semibold rounded">❌ Salah</span>
+                <span class="inline-block px-3 py-1 bg-yellow-100 border-2 border-yellow-500 text-yellow-800 text-xs font-semibold rounded">🟡 Terlewat</span>
+              </div>
+            </div>
+
+            <div class="flex gap-2 mb-4">
+              <button onclick="checkAnalysis()" class="flex-1 btn-primary text-white font-bold py-3 px-6 rounded-full">
+                ✓ Periksa Jawaban
+              </button>
+              <button onclick="resetAnalysis()" class="btn-secondary text-white font-bold py-3 px-6 rounded-full">
+                🔄
+              </button>
+            </div>
+
+            <div id="analysis-feedback" class="hidden bg-white rounded-3xl p-5 card-shadow">
+              <h4 class="font-bold text-purple-700 mb-3 flex items-center gap-2">
+                <span class="text-xl">💬</span> Umpan Balik
+              </h4>
+              <div id="analysis-feedback-content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Refleksi -->
+    <div id="page-refleksi" class="page h-full hidden">
+      <div class="h-full flex flex-col">
+        <header class="bg-white/80 backdrop-blur-sm p-4 card-shadow">
+          <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <button onclick="showPage(&#39;menu&#39;)" class="text-purple-600 font-bold">← Menu</button>
+            <h2 class="text-lg font-bold text-purple-700">💭 Refleksi</h2>
+            <div class="w-16"></div>
+          </div>
+        </header>
+        <div class="content-area p-4">
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-3xl p-6 card-shadow animate-slide-in">
+              <div class="text-center mb-6">
+                <span class="text-6xl">🤔</span>
+                <h3 class="text-2xl font-bold text-purple-700 mt-4">Refleksi Diri</h3>
+                <p class="text-gray-600 mt-2">Evaluasi pemahamanmu tentang huruf kapital</p>
+              </div>
+
+              <div class="space-y-4">
+                <div class="bg-purple-50 rounded-2xl p-4">
+                  <p class="font-bold text-purple-700 mb-2">1. Apa yang sudah aku pahami?</p>
+                  <textarea id="refleksi-1" class="w-full p-3 rounded-xl border-2 border-purple-200 focus:border-purple-500 focus:outline-none resize-none" rows="2" placeholder="Tuliskan di sini..."></textarea>
+                </div>
+
+                <div class="bg-pink-50 rounded-2xl p-4">
+                  <p class="font-bold text-pink-700 mb-2">2. Apa yang masih membingungkan?</p>
+                  <textarea id="refleksi-2" class="w-full p-3 rounded-xl border-2 border-pink-200 focus:border-pink-500 focus:outline-none resize-none" rows="2" placeholder="Tuliskan di sini..."></textarea>
+                </div>
+
+                <div class="bg-purple-50 rounded-2xl p-4">
+                  <p class="font-bold text-purple-700 mb-2">3. Bagaimana perasaanku setelah belajar?</p>
+                  <div class="flex justify-center gap-4 mt-3" id="emoji-rating">
+                    <button onclick="selectEmoji(this, &#39;😊&#39;)" class="text-4xl hover:scale-125 transition p-2 rounded-full">😊</button>
+                    <button onclick="selectEmoji(this, &#39;🤔&#39;)" class="text-4xl hover:scale-125 transition p-2 rounded-full">🤔</button>
+                    <button onclick="selectEmoji(this, &#39;😅&#39;)" class="text-4xl hover:scale-125 transition p-2 rounded-full">😅</button>
+                    <button onclick="selectEmoji(this, &#39;💪&#39;)" class="text-4xl hover:scale-125 transition p-2 rounded-full">💪</button>
+                  </div>
+                </div>
+
+                <button onclick="saveReflection()" class="w-full btn-primary text-white font-bold py-3 px-6 rounded-full">
+                  💾 Simpan Refleksi
+                </button>
+
+                <div id="refleksi-saved" class="hidden text-center p-4 bg-green-50 rounded-2xl">
+                  <span class="text-4xl">✅</span>
+                  <p class="text-green-700 font-bold mt-2">Refleksi tersimpan!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Penutup -->
+    <div id="page-penutup" class="page h-full hidden">
+      <div class="h-full flex flex-col">
+        <header class="bg-white/80 backdrop-blur-sm p-4 card-shadow">
+          <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <button onclick="showPage(&#39;menu&#39;)" class="text-purple-600 font-bold">← Menu</button>
+            <h2 class="text-lg font-bold text-purple-700">🎉 Penutup</h2>
+            <div class="w-16"></div>
+          </div>
+        </header>
+        <div class="content-area p-4">
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-3xl p-6 card-shadow animate-slide-in text-center">
+              <span class="text-6xl emoji-bounce inline-block">🌟</span>
+              <h3 class="text-2xl font-bold text-purple-700 mt-4">Selamat!</h3>
+              <p class="text-gray-600 mt-2 mb-6">Kamu telah menyelesaikan modul Huruf Kapital!</p>
+
+              <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-5 text-left mb-6">
+                <h4 class="font-bold text-purple-700 mb-3">📌 Rangkuman:</h4>
+                <ul class="space-y-2 text-gray-700 text-sm">
+                  <li class="flex items-start gap-2">
+                    <span class="text-purple-500">✓</span>
+                    Huruf kapital di awal kalimat, dan setelah titik (.), tanda seru (!), tanda tanya (?)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-purple-500">✓</span>
+                    Nama orang, tempat, agama, bahasa, suku ditulis kapital
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-purple-500">✓</span>
+                    Judul buku/karangan menggunakan kapital di awal kata (kecuali kata tugas)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-purple-500">✓</span>
+                    Nama hari, bulan, dan hari besar ditulis kapital
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-purple-500">✓</span>
+                    Kata pertama setelah tanda titik/seru/tanya HARUS kapital, tidak peduli jenis katanya
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-4 mb-6">
+                <p class="text-yellow-800">💡 <strong>Tips:</strong> Terus berlatih menulis dengan memperhatikan penggunaan huruf kapital yang benar ya!</p>
+              </div>
+
+              <div class="flex flex-col gap-3">
+                <button onclick="showPage(&#39;kuis-menu&#39;)" class="btn-primary text-white font-bold py-3 px-6 rounded-full">
+                  🎯 Uji Pemahaman Lagi
+                </button>
+                <button onclick="showPage(&#39;home&#39;)" class="btn-secondary text-white font-bold py-3 px-6 rounded-full">
+                  🏠 Kembali ke Beranda
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Default config
+    const defaultConfig = {
+      module_title: 'Belajar Huruf Kapital',
+      primary_color: '#A855F7',
+      secondary_color: '#EC4899',
+      background_color: '#F3E8FF',
+      text_color: '#374151',
+      surface_color: '#FFFFFF'
+    };
+
+    let config = { ...defaultConfig };
+
+    // Element SDK initialization
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (newConfig) => {
+          config = { ...defaultConfig, ...newConfig };
+          applyConfig();
+        },
+        mapToCapabilities: (cfg) => ({
+          recolorables: [
+            {
+              get: () => cfg.background_color || defaultConfig.background_color,
+              set: (v) => { cfg.background_color = v; window.elementSdk.setConfig({ background_color: v }); }
+            },
+            {
+              get: () => cfg.surface_color || defaultConfig.surface_color,
+              set: (v) => { cfg.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); }
+            },
+            {
+              get: () => cfg.text_color || defaultConfig.text_color,
+              set: (v) => { cfg.text_color = v; window.elementSdk.setConfig({ text_color: v }); }
+            },
+            {
+              get: () => cfg.primary_color || defaultConfig.primary_color,
+              set: (v) => { cfg.primary_color = v; window.elementSdk.setConfig({ primary_color: v }); }
+            },
+            {
+              get: () => cfg.secondary_color || defaultConfig.secondary_color,
+              set: (v) => { cfg.secondary_color = v; window.elementSdk.setConfig({ secondary_color: v }); }
+            }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (cfg) => new Map([
+          ['module_title', cfg.module_title || defaultConfig.module_title]
+        ])
+      });
+    }
+
+    function applyConfig() {
+      document.getElementById('main-title').textContent = config.module_title || defaultConfig.module_title;
+    }
+
+    // Page navigation
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+      document.getElementById('page-' + pageId).classList.remove('hidden');
+    }
+
+    // Materi mode toggle
+    function setMateriMode(mode) {
+      const btnDeskripsi = document.getElementById('btn-deskripsi');
+      const btnFlashcard = document.getElementById('btn-flashcard');
+      const materiDeskripsi = document.getElementById('materi-deskripsi');
+      const materiFlashcard = document.getElementById('materi-flashcard');
+
+      if (mode === 'deskripsi') {
+        btnDeskripsi.classList.add('btn-primary', 'text-white');
+        btnDeskripsi.classList.remove('text-purple-600');
+        btnFlashcard.classList.remove('btn-primary', 'text-white');
+        btnFlashcard.classList.add('text-purple-600');
+        materiDeskripsi.classList.remove('hidden');
+        materiFlashcard.classList.add('hidden');
+      } else {
+        btnFlashcard.classList.add('btn-primary', 'text-white');
+        btnFlashcard.classList.remove('text-purple-600');
+        btnDeskripsi.classList.remove('btn-primary', 'text-white');
+        btnDeskripsi.classList.add('text-purple-600');
+        materiDeskripsi.classList.add('hidden');
+        materiFlashcard.classList.remove('hidden');
+        currentCard = 0;
+        updateFlashcard();
+      }
+    }
+
+    // Flashcard data
+    const flashcards = [
+      { emoji: '📝', title: 'Awal Kalimat', desc: 'Huruf pertama pada awal kalimat, dan setelah titik (.), tanda seru (!), tanda tanya (?) harus kapital.', example: '<strong>I</strong>bu berkata, "<strong>B</strong>elajar yang rajin ya!" <strong>K</strong>ami siap.' },
+      { emoji: '👤', title: 'Nama Orang & Julukan', desc: 'Unsur nama orang dan julukan kehormatan.', example: '<strong>W</strong>age <strong>R</strong>udolf <strong>S</strong>upratman' },
+      { emoji: '🕌', title: 'Agama & Kitab Suci', desc: 'Nama agama, kitab suci, dan kata ganti Tuhan.', example: '<strong>I</strong>slam, <strong>A</strong>l-<strong>Q</strong>ur\'an' },
+      { emoji: '🎓', title: 'Gelar Kehormatan', desc: 'Gelar yang diikuti nama orang.', example: '<strong>D</strong>oktor <strong>A</strong>ji, <strong>S</strong>ultan <strong>H</strong>asanuddin' },
+      { emoji: '🗣️', title: 'Bangsa, Bahasa, Suku', desc: 'Huruf pertama nama bangsa, suku, dan bahasa.', example: 'bangsa <strong>I</strong>ndonesia, suku <strong>D</strong>ayak' },
+      { emoji: '📅', title: 'Waktu & Hari Besar', desc: 'Nama tahun, bulan, hari, dan hari raya.', example: 'bulan <strong>A</strong>gustus, hari <strong>L</strong>ebaran' },
+      { emoji: '🗺️', title: 'Geografi & Tempat', desc: 'Nama negara, kota, sungai, gunung.', example: '<strong>J</strong>akarta, <strong>S</strong>ungai <strong>M</strong>usi' },
+      { emoji: '📚', title: 'Judul Karangan', desc: 'Awal kata dalam judul (kecuali kata tugas di tengah).', example: '<strong>L</strong>askar <strong>P</strong>elangi' }
+    ];
+
+    let currentCard = 0;
+
+    function updateFlashcard() {
+      const card = flashcards[currentCard];
+      document.getElementById('flashcard-emoji').textContent = card.emoji;
+      document.getElementById('flashcard-front-text').textContent = card.title;
+      document.getElementById('flashcard-back-text').textContent = card.desc;
+      document.getElementById('flashcard-example').innerHTML = card.example;
+      document.getElementById('flashcard-counter').textContent = `Kartu ${currentCard + 1} dari ${flashcards.length}`;
+      document.getElementById('flashcard-container').classList.remove('flipped');
+    }
+
+    function flipCard() {
+      document.getElementById('flashcard-container').classList.toggle('flipped');
+    }
+
+    function nextCard() {
+      currentCard = (currentCard + 1) % flashcards.length;
+      updateFlashcard();
+    }
+
+    function prevCard() {
+      currentCard = (currentCard - 1 + flashcards.length) % flashcards.length;
+      updateFlashcard();
+    }
+
+    // Matching Quiz Data
+    const matchingData = [
+      { rule: 'Awal kalimat', example: 'Dia pergi ke sekolah.' },
+      { rule: 'Setelah tanda seru', example: 'Cepat! Dia berlari.' },
+      { rule: 'Nama orang', example: 'Soekarno adalah presiden pertama.' },
+      { rule: 'Nama agama', example: 'Ia beragama Islam.' },
+      { rule: 'Gelar kehormatan', example: 'Dokter Rina praktik di sini.' },
+      { rule: 'Nama bangsa', example: 'Bangsa Indonesia merdeka.' },
+      { rule: 'Nama bulan', example: 'Bulan Agustus adalah bulan kemerdekaan.' },
+      { rule: 'Nama kota', example: 'Saya tinggal di Jakarta.' },
+      { rule: 'Nama sungai', example: 'Sungai Kapuas sangat panjang.' },
+      { rule: 'Judul buku', example: 'Novel Laskar Pelangi sangat terkenal.' }
+    ];
+
+    let matchingScore = 0;
+    let selectedRule = null;
+    let matchedPairs = [];
+    let shuffledExamples = [];
+
+    function startMatchingQuiz() {
+      showPage('kuis-matching');
+      matchingScore = 0;
+      selectedRule = null;
+      matchedPairs = [];
+      
+      shuffledExamples = [...matchingData].sort(() => Math.random() - 0.5);
+      
+      renderMatchingQuiz();
+      document.getElementById('matching-result').classList.add('hidden');
+      document.getElementById('matching-feedback').classList.add('hidden');
+      updateMatchingProgress();
+    }
+
+    function renderMatchingQuiz() {
+      const rulesContainer = document.getElementById('matching-rules');
+      const examplesContainer = document.getElementById('matching-examples');
+      
+      rulesContainer.innerHTML = matchingData.map((item, idx) => `
+        <div class="match-item bg-white border-2 border-purple-200 rounded-xl p-3 ${matchedPairs.includes(idx) ? 'correct opacity-50' : ''}" 
+             data-rule-idx="${idx}" onclick="selectRule(${idx})">
+          <span class="text-purple-700 font-semibold">${item.rule}</span>
+        </div>
+      `).join('');
+      
+      examplesContainer.innerHTML = shuffledExamples.map((item, idx) => {
+        const originalIdx = matchingData.findIndex(m => m.example === item.example);
+        return `
+          <div class="match-item bg-white border-2 border-pink-200 rounded-xl p-3 ${matchedPairs.includes(originalIdx) ? 'correct opacity-50' : ''}" 
+               data-example-idx="${originalIdx}" onclick="selectExample(${originalIdx})">
+            <span class="text-gray-700 text-sm">${item.example}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function selectRule(idx) {
+      if (matchedPairs.includes(idx)) return;
+      
+      document.querySelectorAll('[data-rule-idx]').forEach(el => el.classList.remove('selected'));
+      document.querySelector(`[data-rule-idx="${idx}"]`).classList.add('selected');
+      selectedRule = idx;
+    }
+
+    function selectExample(idx) {
+      if (matchedPairs.includes(idx) || selectedRule === null) return;
+      
+      const feedback = document.getElementById('matching-feedback');
+      
+      if (selectedRule === idx) {
+        matchingScore++;
+        matchedPairs.push(idx);
+        
+        feedback.className = 'mt-4 p-4 rounded-2xl text-center bg-green-100 text-green-700';
+        feedback.innerHTML = '✅ Benar! Pasangan sudah tepat!';
+        feedback.classList.remove('hidden');
+        
+        document.querySelector(`[data-rule-idx="${idx}"]`).classList.add('correct');
+        document.querySelector(`[data-example-idx="${idx}"]`).classList.add('correct');
+      } else {
+        feedback.className = 'mt-4 p-4 rounded-2xl text-center bg-red-100 text-red-700';
+        feedback.innerHTML = '❌ Belum tepat. Coba lagi!';
+        feedback.classList.remove('hidden');
+        
+        document.querySelector(`[data-rule-idx="${selectedRule}"]`).classList.add('incorrect');
+        document.querySelector(`[data-example-idx="${idx}"]`).classList.add('incorrect');
+        
+        setTimeout(() => {
+          document.querySelector(`[data-rule-idx="${selectedRule}"]`).classList.remove('incorrect');
+          document.querySelector(`[data-example-idx="${idx}"]`).classList.remove('incorrect');
+        }, 500);
+      }
+      
+      selectedRule = null;
+      document.querySelectorAll('[data-rule-idx]').forEach(el => el.classList.remove('selected'));
+      
+      updateMatchingProgress();
+      
+      if (matchedPairs.length === 10) {
+        setTimeout(showMatchingResult, 1000);
+      }
+    }
+
+    function updateMatchingProgress() {
+      const progress = (matchedPairs.length / 10) * 100;
+      document.getElementById('matching-progress').style.width = progress + '%';
+      document.getElementById('matching-score').textContent = `Skor: ${matchingScore}/10`;
+    }
+
+    function showMatchingResult() {
+      const result = document.getElementById('matching-result');
+      const emoji = document.getElementById('result-emoji');
+      const title = document.getElementById('result-title');
+      const message = document.getElementById('result-message');
+      
+      if (matchingScore >= 9) {
+        emoji.textContent = '🌟';
+        title.textContent = 'Luar Biasa!';
+        message.textContent = `Skor kamu ${matchingScore}/10. Kamu sudah sangat memahami huruf kapital!`;
+      } else if (matchingScore >= 7) {
+        emoji.textContent = '👍';
+        title.textContent = 'Hebat!';
+        message.textContent = `Skor kamu ${matchingScore}/10. Terus berlatih ya!`;
+      } else {
+        emoji.textContent = '💪';
+        title.textContent = 'Semangat!';
+        message.textContent = `Skor kamu ${matchingScore}/10. Ayo pelajari materinya lagi!`;
+      }
+      
+      result.classList.remove('hidden');
+    }
+
+    // ===== ANALYSIS QUIZ - PARAGRAF LENGKAP =====
+    const analysisData = [
+      { word: 'pada', status: 'K', reason: 'Awal kalimat' },
+      { word: 'hari', status: 'x', reason: 'Kata biasa' },
+      { word: 'senin', status: 'K', reason: 'Nama hari' },
+      { word: 'tanggal', status: 'x', reason: 'Kata biasa' },
+      { word: '17', status: 'x', reason: 'Angka' },
+      { word: 'agustus,', status: 'K', reason: 'Nama bulan' },
+      { word: 'andi', status: 'K', reason: 'Nama orang' },
+      { word: 'dan', status: 'x', reason: 'Kata penghubung' },
+      { word: 'siti', status: 'K', reason: 'Nama orang' },
+      { word: 'pergi', status: 'x', reason: 'Kata kerja' },
+      { word: 'ke', status: 'x', reason: 'Kata depan' },
+      { word: 'jakarta', status: 'K', reason: 'Nama kota' },
+      { word: 'untuk', status: 'x', reason: 'Kata penghubung' },
+      { word: 'mengikuti', status: 'x', reason: 'Kata kerja' },
+      { word: 'upacara', status: 'x', reason: 'Kata biasa' },
+      { word: 'kemerdekaan', status: 'x', reason: 'Kata biasa' },
+      { word: 'indonesia.', status: 'K', reason: 'Nama bangsa' },
+      { word: 'mereka', status: 'K', reason: 'Awal kalimat (setelah titik)' },
+      { word: 'berangkat', status: 'x', reason: 'Kata kerja' },
+      { word: 'dari', status: 'x', reason: 'Kata depan' },
+      { word: 'kota', status: 'x', reason: 'Kata biasa' },
+      { word: 'bandung', status: 'K', reason: 'Nama kota' },
+      { word: 'menggunakan', status: 'x', reason: 'Kata kerja' },
+      { word: 'kereta', status: 'x', reason: 'Kata biasa' },
+      { word: 'api.', status: 'x', reason: 'Kata biasa' },
+      { word: 'di', status: 'K', reason: 'Awal kalimat (setelah titik)' },
+      { word: 'sana,', status: 'x', reason: 'Kata biasa' },
+      { word: 'mereka', status: 'x', reason: 'Kata ganti' },
+      { word: 'bertemu', status: 'x', reason: 'Kata kerja' },
+      { word: 'dengan', status: 'x', reason: 'Kata penghubung' },
+      { word: 'pak', status: 'K', reason: 'Gelar kehormatan' },
+      { word: 'budi,', status: 'K', reason: 'Nama orang' },
+      { word: 'seorang', status: 'x', reason: 'Kata biasa' },
+      { word: 'guru', status: 'x', reason: 'Profesi' },
+      { word: 'bahasa', status: 'K', reason: 'Nama bahasa' },
+      { word: 'indonesia', status: 'K', reason: 'Nama bangsa' },
+      { word: 'yang', status: 'x', reason: 'Kata penghubung' },
+      { word: 'juga', status: 'x', reason: 'Kata biasa' },
+      { word: 'berasal', status: 'x', reason: 'Kata kerja' },
+      { word: 'dari', status: 'x', reason: 'Kata depan' },
+      { word: 'suku', status: 'x', reason: 'Kata biasa' },
+      { word: 'sunda.', status: 'K', reason: 'Nama suku' },
+      { word: 'pak', status: 'K', reason: 'Gelar kehormatan (awal kalimat)' },
+      { word: 'budi', status: 'K', reason: 'Nama orang' },
+      { word: 'berkata,', status: 'x', reason: 'Kata kerja' },
+      { word: '"selamat', status: 'K', reason: 'Awal kutipan langsung' },
+      { word: 'hari', status: 'x', reason: 'Kata biasa' },
+      { word: 'kemerdekaan,', status: 'x', reason: 'Kata biasa' },
+      { word: 'anak-anak!', status: 'x', reason: 'Kata sapaan' },
+      { word: 'semoga', status: 'K', reason: 'Awal kalimat (setelah tanda seru)' },
+      { word: 'kalian', status: 'x', reason: 'Kata ganti' },
+      { word: 'selalu', status: 'x', reason: 'Kata biasa' },
+      { word: 'mencintai', status: 'x', reason: 'Kata kerja' },
+      { word: 'tanah', status: 'x', reason: 'Kata biasa' },
+      { word: 'air."', status: 'x', reason: 'Kata biasa' },
+      { word: 'setelah', status: 'K', reason: 'Awal kalimat (setelah titik)' },
+      { word: 'upacara,', status: 'x', reason: 'Kata biasa' },
+      { word: 'mereka', status: 'x', reason: 'Kata ganti' },
+      { word: 'membaca', status: 'x', reason: 'Kata kerja' },
+      { word: 'buku', status: 'x', reason: 'Kata biasa' },
+      { word: 'berjudul', status: 'x', reason: 'Kata kerja' },
+      { word: 'laskar', status: 'K', reason: 'Judul buku - kata pertama' },
+      { word: 'pelangi', status: 'K', reason: 'Judul buku - kata penting' },
+      { word: 'karya', status: 'x', reason: 'Kata biasa' },
+      { word: 'andrea', status: 'K', reason: 'Nama penulis' },
+      { word: 'hirata.', status: 'K', reason: 'Nama penulis' }
+    ];
+
+    let selectedWords = [];
+
+    function startAnalysisQuiz() {
+      showPage('kuis-analysis');
+      selectedWords = [];
+      renderAnalysisParagraph();
+      document.getElementById('analysis-feedback').classList.add('hidden');
+    }
+
+    function renderAnalysisParagraph() {
+      const container = document.getElementById('analysis-paragraph');
+      
+      container.innerHTML = analysisData.map((item, idx) => {
+        const isSelected = selectedWords.includes(idx);
+        const buttonClass = isSelected ? 'word-btn-selected' : '';
+        
+        return `<span class="word-btn ${buttonClass}" data-word-idx="${idx}" onclick="toggleWord(${idx})">${item.word}</span>`;
+      }).join(' ');
+    }
+
+    function toggleWord(idx) {
+      if (selectedWords.includes(idx)) {
+        selectedWords = selectedWords.filter(i => i !== idx);
+      } else {
+        selectedWords.push(idx);
+      }
+      renderAnalysisParagraph();
+    }
+
+    function checkAnalysis() {
+      const feedback = document.getElementById('analysis-feedback');
+      const content = document.getElementById('analysis-feedback-content');
+      
+      let correctSelection = 0;
+      let missed = [];
+      let wrongSelection = [];
+      
+      // Hitung jawaban benar (yang seharusnya dipilih dan dipilih)
+      analysisData.forEach((item, idx) => {
+        if (item.status === 'K') {
+          if (selectedWords.includes(idx)) {
+            correctSelection++;
+          } else {
+            missed.push({ word: item.word, reason: item.reason });
+          }
+        }
+      });
+      
+      // Hitung jawaban salah (yang tidak seharusnya dipilih tapi dipilih)
+      selectedWords.forEach(idx => {
+        if (analysisData[idx].status !== 'K') {
+          wrongSelection.push(analysisData[idx].word);
+        }
+      });
+      
+      // Hitung total yang seharusnya kapital
+      const totalCorrect = analysisData.filter(item => item.status === 'K').length;
+      const score = Math.round((correctSelection / totalCorrect) * 100);
+      
+      // Update styling
+      document.querySelectorAll('[data-word-idx]').forEach(el => {
+        const idx = parseInt(el.dataset.wordIdx);
+        const item = analysisData[idx];
+        const isSelectedByUser = selectedWords.includes(idx);
+        
+        el.classList.remove('correct-answer', 'wrong-answer', 'missed-answer', 'already-correct');
+        
+        if (item.status === 'K' && isSelectedByUser) {
+          el.classList.add('correct-answer');
+        } else if (item.status === 'K' && !isSelectedByUser) {
+          el.classList.add('missed-answer');
+        } else if (item.status !== 'K' && isSelectedByUser) {
+          el.classList.add('wrong-answer');
+        } else if (item.status === 'x') {
+          el.classList.add('already-correct');
+        }
+      });
+      
+      // Buat feedback
+      let feedbackHTML = `
+        <div class="text-center mb-4">
+          <span class="text-4xl">${score >= 70 ? '🎉' : '💪'}</span>
+          <p class="text-xl font-bold ${score >= 70 ? 'text-green-600' : 'text-orange-600'} mt-2">Skor: ${score}%</p>
+          <p class="text-gray-600">Kamu menemukan ${correctSelection} dari ${totalCorrect} kesalahan</p>
+        </div>
+      `;
+      
+      feedbackHTML += `
+        <div class="space-y-2 mb-4 text-sm">
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 rounded bg-green-200 border-2 border-green-500"></div>
+            <span class="text-gray-700"><strong>Hijau:</strong> Benar dipilih [✅]</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 rounded bg-red-200 border-2 border-red-500"></div>
+            <span class="text-gray-700"><strong>Merah:</strong> Salah dipilih [❌]</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 rounded bg-yellow-200 border-2 border-yellow-500"></div>
+            <span class="text-gray-700"><strong>Kuning:</strong> Terlewat [K]</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 rounded bg-indigo-200 border-2 border-indigo-500"></div>
+            <span class="text-gray-700"><strong>Ungu:</strong> Sudah benar [✅]</span>
+          </div>
+        </div>
+      `;
+      
+      if (missed.length > 0) {
+        feedbackHTML += `
+          <div class="bg-yellow-50 rounded-xl p-3 mb-3 border-l-4 border-yellow-500">
+            <p class="font-bold text-yellow-700 text-sm">🟡 Kata yang terlewat (harus kapital):</p>
+            <div class="text-yellow-800 text-sm mt-2 space-y-1">
+              ${missed.map(m => `<p>• <strong>${m.word}</strong> - ${m.reason}</p>`).join('')}
+            </div>
+          </div>
+        `;
+      }
+      
+      if (wrongSelection.length > 0) {
+        feedbackHTML += `
+          <div class="bg-red-50 rounded-xl p-3 mb-3 border-l-4 border-red-500">
+            <p class="font-bold text-red-700 text-sm">❌ Kata yang salah dipilih (tidak perlu kapital):</p>
+            <p class="text-red-800 text-sm mt-1 font-semibold">${[...new Set(wrongSelection)].join(', ')}</p>
+          </div>
+        `;
+      }
+      
+      if (missed.length === 0 && wrongSelection.length === 0) {
+        feedbackHTML += `
+          <div class="bg-green-50 rounded-xl p-3 border-l-4 border-green-500">
+            <p class="font-bold text-green-700 text-sm">✨ Sempurna!</p>
+            <p class="text-green-800 text-sm mt-1">Kamu menemukan semua kata yang harus dikapitalkan!</p>
+          </div>
+        `;
+      }
+      
+      content.innerHTML = feedbackHTML;
+      feedback.classList.remove('hidden');
+    }
+
+    function resetAnalysis() {
+      selectedWords = [];
+      renderAnalysisParagraph();
+      document.getElementById('analysis-feedback').classList.add('hidden');
+    }
+
+    // Reflection
+    let selectedReflectionEmoji = null;
+
+    function selectEmoji(btn, emoji) {
+      document.querySelectorAll('#emoji-rating button').forEach(b => {
+        b.classList.remove('bg-purple-200', 'rounded-full');
+      });
+      btn.classList.add('bg-purple-200', 'rounded-full');
+      selectedReflectionEmoji = emoji;
+    }
+
+    function saveReflection() {
+      const r1 = document.getElementById('refleksi-1').value;
+      const r2 = document.getElementById('refleksi-2').value;
+      
+      if (r1 || r2 || selectedReflectionEmoji) {
+        document.getElementById('refleksi-saved').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('refleksi-saved').classList.add('hidden');
+        }, 3000);
+      }
+    }
+
+    // Initialize
+    applyConfig();
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cf661a703eddf93',t:'MTc3MTM0MjgwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="./saved_resource.html"></iframe>
+</body></html>
